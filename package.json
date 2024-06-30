@@ -1,0 +1,54 @@
+{
+  "name": "@mobilemancer/au2-config",
+  "description": "An Aurelia 2 plugin for config.",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobilemancer/au2-config.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "aurelia": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "@aurelia/testing": "latest",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^36.0.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "style-loader": "^3.3.4",
+    "css-loader": "^6.10.0",
+    "dotenv-webpack": "^8.1.0",
+    "@aurelia/webpack-loader": "latest",
+    "ts-loader": "^9.5.1",
+    "postcss-loader": "^8.1.1",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19",
+    "webpack-node-externals": "^3.0.0",
+    "@types/node": "^20.12.3",
+    "typescript": "^5.4.3",
+    "tslib": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0"
+  },
+  "scripts": {
+    "lint:js": "eslint src --ext .js,.ts",
+    "lint": "npm run lint:js",
+    "start": "webpack serve",
+    "build": "webpack --env production",
+    "analyze": "webpack --env production --analyze",
+    "prepare": "npm run build"
+  }
+}
