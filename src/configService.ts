@@ -9,7 +9,11 @@ export class ConfigService {
     private hostBasedConfigDefinition: object;
     private commonConfigDefinition: object;
 
-    constructor(configuration: object) {
+    constructor() { }
+
+    public init(configuration: object) {
+        assert(configuration);
+
         const currentHost = this.getHost();
         this.commonConfigDefinition = configuration;
 
@@ -21,7 +25,7 @@ export class ConfigService {
 
         this.hostBasedConfigDefinition = this.commonConfigDefinition[this.ENVIRONMENTS].filter((env) => envDefinitions[0].environmentName === env.name)[0];
 
-        assert(!!this.hostBasedConfigDefinition);
+        assert(this.hostBasedConfigDefinition);
     }
 
     public getProperty(key: string): string | number | boolean | object | object[] {
